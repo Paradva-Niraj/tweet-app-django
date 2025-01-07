@@ -6,8 +6,14 @@
 
 {% block content %}
 <h2 class="">tweet app </h2>
-
-<h2>
+<h1>
     {% if form.instance.pk %}edit tweet {% else %}create tweet {% endif %}
+<form method='POST' enctype="multipart/form-data" class="form"> 
+    {% csrf_token %}
+    {{form.as_p}}
+    <button class="btn btn-primary" type="submit">submit</button>
+</form>
+<a href="{% url 'tweet_list' %}">back to home</a>
+    
 </h2>
 {% endblock %}
