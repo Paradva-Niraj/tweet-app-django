@@ -63,8 +63,19 @@
                     </li>
                 </ul>
                 <div class="d-flex">
-                    <button class="btn btn-custom me-2">Login</button>
-                    <button class="btn btn-outline-light">Logout</button>
+                    <a href="{% url 'tweet_list' %}"><button class="btn btn-custom me-2">home</button></a>
+                    {% if user.is_authenticated %}
+                   
+                        <form method="post" action="{% url 'logout' %}">
+                            {% csrf_token %}
+                        <button class="btn btn-success" type = 'submit'>logout</button>
+                        </form>
+                    {% else %}
+                    <a href="{% url 'tweet_register' %}"><button class="btn btn-custom me-2">register</button></a>
+                    <a href="{% url 'login' %}"><button class="btn btn-custom me-2">login</button></a>
+
+                    {% endif %}
+                    
                 </div>
             </div>
         </div>

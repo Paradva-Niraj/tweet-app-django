@@ -1,0 +1,7 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>log out </h2>
+{% csrf_token %}
+<p>you already logout <a href="{% url 'tweet_list' %}">login here</a></p>
+{% endblock %}
