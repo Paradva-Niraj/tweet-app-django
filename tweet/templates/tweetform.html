@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    tweet 
+{% endblock %}
+
+{% block content %}
+<h2 class="">tweet app </h2>
+
+<h2>
+    {% if form.instance.pk %}edit tweet {% else %}create tweet {% endif %}
+</h2>
+{% endblock %}
